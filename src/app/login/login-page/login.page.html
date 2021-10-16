@@ -19,17 +19,17 @@
     <form [formGroup]="loginForm">
       <ion-item class="ion-no-padding">
         <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email"></ion-input>
+        <ion-input formControlName="email" autocomplete="of"></ion-input>
       </ion-item>
 
       <ion-item class="ion-no-padding">
         <ion-label position="floating">Password</ion-label>
-        <ion-input formControlName="password" [type]="passwordType" clearOnEdit="false"></ion-input>
+        <ion-input formControlName="password" [type]="passwordType" autocomplete="of" clearOnEdit="false"></ion-input>
         <ion-icon slot="end" [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
       </ion-item>
 
       <div class="forgot-passord">
-        <span class="cursor-pointer">Forgot Password?</span>
+        <span class="cursor-pointer" (click)="navigateToForgotPassword()">Forgot Password?</span>
       </div>
 
       <div>

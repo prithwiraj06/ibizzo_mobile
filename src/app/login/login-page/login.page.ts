@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginPage implements OnInit{
 
   loginForm: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private _router: Router) { }
 
   ngOnInit() {
     this.loginForm = this._formBuilder.group({
@@ -25,6 +26,10 @@ export class LoginPage implements OnInit{
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  }
+
+  navigateToForgotPassword() {
+    this._router.navigate(['/forgot-password'])
   }
   
   onFormSubmit() {
