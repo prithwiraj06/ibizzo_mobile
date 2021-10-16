@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center">
+      Ibizzo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div>
+    <ion-label><strong>Login</strong></ion-label>
+  </div>
+
+  <div class="ion-margin-top">
+    <ion-label color="medium">Enter your email and password</ion-label>
+  </div>
+
+  <div class="ion-margin-top">
+    <form [formGroup]="loginForm">
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" [type]="passwordType" clearOnEdit="false"></ion-input>
+        <ion-icon slot="end" [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+      </ion-item>
+
+      <div class="forgot-passord">
+        <span class="cursor-pointer">Forgot Password?</span>
+      </div>
+
+      <div>
+        <ion-label color="danger" *ngIf="invalidCredentials">Invalid Credentials</ion-label>
+      </div>
+
+      <div class="ion-margin-top">
+        <ion-button color="success" expand="block" (click)="onFormSubmit()">Log In</ion-button>
+      </div>
+ 
+      <div class="ion-margin-top ion-text-center">
+          <b>Don't have an account? <ion-label color="success" class="cursor-pointer">Signup</ion-label></b>
+      </div>
+    </form>
+
+
+  </div>
+</ion-content>

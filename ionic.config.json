@@ -1,0 +1,7 @@
+{
+  "name": "ibizzo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
