@@ -31,6 +31,10 @@ export class LoginPage implements OnInit{
   navigateToForgotPassword() {
     this._router.navigate(['/forgot-password'])
   }
+
+  navigateToSignUp() {
+    this._router.navigate(['/sign-up']);
+  }
   
   onFormSubmit() {
     console.log(this.loginForm.value)

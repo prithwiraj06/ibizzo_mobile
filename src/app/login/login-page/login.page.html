@@ -19,12 +19,12 @@
     <form [formGroup]="loginForm">
       <ion-item class="ion-no-padding">
         <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email" autocomplete="of"></ion-input>
+        <ion-input formControlName="email" autocomplete="off"></ion-input>
       </ion-item>
 
       <ion-item class="ion-no-padding">
         <ion-label position="floating">Password</ion-label>
-        <ion-input formControlName="password" [type]="passwordType" autocomplete="of" clearOnEdit="false"></ion-input>
+        <ion-input formControlName="password" [type]="passwordType" autocomplete="off" clearOnEdit="false"></ion-input>
         <ion-icon slot="end" [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
       </ion-item>
 
@@ -41,7 +41,9 @@
       </div>
  
       <div class="ion-margin-top ion-text-center">
-          <b>Don't have an account? <ion-label color="success" class="cursor-pointer">Signup</ion-label></b>
+          <b>Don't have an account? 
+            <ion-label color="success" class="cursor-pointer" (click)="navigateToSignUp()">Signup</ion-label>
+          </b>
       </div>
     </form>
 

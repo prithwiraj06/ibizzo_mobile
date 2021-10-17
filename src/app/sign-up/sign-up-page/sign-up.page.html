@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Ibizzo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div>
+    <ion-label><strong>Sign Up</strong></ion-label>
+  </div>
+
+  <div class="ion-margin-top">
+    <ion-label color="medium">Enter your credentials to continue</ion-label>
+  </div>
+
+  <div class="ion-margin-top">
+    <form [formGroup]="signUpForm">
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input formControlName="userName" autocomplete="off"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" autocomplete="off" (ionBlur)="validateEmail()" (input)="onEmailInput()"></ion-input>
+        <ion-icon color="{{emailValidationIconColor}}" slot="end" [name]="emailValidationIcon" class="passwordIcon" *ngIf="showEmailValidationIcon"></ion-icon>
+      </ion-item>
+
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" [type]="passwordType" autocomplete="off" clearOnEdit="false"></ion-input>
+        <ion-icon slot="end" [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+      </ion-item>
+
+      <div class="ion-margin-top">
+        <ion-label color="danger" *ngIf="invalidCredentials">Email already exists</ion-label>
+      </div>
+
+      <div class="ion-margin-top font-14">
+        <span>By continuing you agree to our
+          <ion-label color="success" class="cursor-pointer font-14">Terms of Services</ion-label>
+          and
+          <ion-label color="success" class="cursor-pointer font-14">Privacy Policy</ion-label>
+        </span>
+      </div>
+
+      <div class="ion-margin-top">
+        <ion-button color="success" expand="block" (click)="onFormSubmit()">Sign Up</ion-button>
+      </div>
+ 
+      <div class="ion-margin-top ion-text-center">
+          <b>Already have an account? 
+            <ion-label color="success" class="cursor-pointer" (click)="navigateToLogin()">Login</ion-label>
+          </b>
+      </div>
+    </form>
+
+
+  </div>
+</ion-content>
