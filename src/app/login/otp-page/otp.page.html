@@ -1,1 +1,40 @@
-<ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+<ion-header [translucent]="true">
+    <ion-toolbar color="success">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="login"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+            Ibizzo
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <div>
+        <ion-label><strong>Enter your 4-digit code</strong></ion-label>
+    </div>
+
+    <div class="ion-margin-top">
+
+        <ion-label color="medium">Code</ion-label>
+        <div class="ion-margin-top">
+            <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+        </div>
+
+        <ion-item-divider></ion-item-divider>
+
+        <div class="ion-margin-top">
+            <ion-label color="danger" *ngIf="invalidOtp">Invalid otp please try again</ion-label>
+        </div>
+
+        <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+            <ion-label color="success" class="cursor-pointer" (click)="resendOtp()">Resend Code</ion-label>
+        </ion-fab>
+
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button color="success">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </div>
+</ion-content>

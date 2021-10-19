@@ -10,15 +10,24 @@ export class OtpPage implements OnInit{
   otp: number;
   config :any = {
     allowNumbersOnly: true,
-    length: 5,
+    length: 4,
     isPasswordInput: false,
     disableAutoFocus: false,
     placeholder: '',
     inputStyles: {
-      'width': '50px',
-      'height': '50px'
+      'width': '30px',
+      'height': '30px',
+      'border-radius': '0px',
+      'font-size': '20px',
+      'border-left': 'none',
+      'border-right': 'none',
+      'border-top': 'none',
+      'border-color': 'black',
+      'outline': 'none'
     }
   };
+  invalidOtp: boolean = false;
+
   constructor(private _router: Router) { }
 
   ngOnInit() {
@@ -32,8 +41,12 @@ export class OtpPage implements OnInit{
   navigateToDashboard() {
     this._router.navigate(['/dashboard']);
   }
+
+  resendOtp() {
+    
+  }
   
-  onFormSubmit() {
+  validateOtp() {
   }
 
 }

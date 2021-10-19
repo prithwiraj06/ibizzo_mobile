@@ -29,7 +29,7 @@ export class LoginPage implements OnInit{
   }
 
   navigateToForgotPassword() {
-    this._router.navigate(['/forgot-password'])
+    this._router.navigate(['/password/forgot-password'])
   }
 
   navigateToSignUp() {
