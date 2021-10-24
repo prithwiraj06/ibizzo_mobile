@@ -38,7 +38,6 @@ export class LoginPage implements OnInit{
   
   onFormSubmit() {
     console.log(this.loginForm.value);
-    this._router.navigate(['/login/otp'])
   }
 
 }

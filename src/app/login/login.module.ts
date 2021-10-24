@@ -5,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login-page/login.page';
-import { OtpPage } from './otp-page/otp.page';
-import { NgOtpInputModule } from  'ng-otp-input';
 
 
 @NgModule({
@@ -15,9 +13,8 @@ import { NgOtpInputModule } from  'ng-otp-input';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    LoginPageRoutingModule,
-    NgOtpInputModule
+    LoginPageRoutingModule
   ],
-  declarations: [LoginPage, OtpPage]
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}

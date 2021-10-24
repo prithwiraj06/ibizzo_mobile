@@ -56,7 +56,8 @@ export class SignUpPage implements OnInit{
   }
   
   onFormSubmit() {
-    console.log(this.signUpForm.value)
+    console.log(this.signUpForm.value);
+    this._router.navigate(['/sign-up/phone-number']);
   }
 
 }

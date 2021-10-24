@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="success">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="sigh-up"></ion-back-button>
+          </ion-buttons>
+        <ion-title class="ion-text-center">
+            Ibizzo
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <div>
+        <ion-label><strong>Enter Mobile Number</strong></ion-label>
+    </div>
+
+    <div class="ion-margin-top">
+        <ion-label color="medium">Mobile Number</ion-label>
+        <ion-grid class="ion-no-padding">
+            <ion-row>
+                <ion-col size="1">
+                    <ion-item>
+                        <ion-input value="+91-" disabled="true"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size=""></ion-col>
+                <ion-col size="11">
+                    <form [formGroup]="mobileNumberForm">
+                        <ion-item class="ion-margin-start">
+                            <ion-input formControlName="phoneNo" type="number" autocomplete="off"></ion-input>
+                        </ion-item>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button color="success" (click)="onFormSubmit()">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </div>
+</ion-content>
