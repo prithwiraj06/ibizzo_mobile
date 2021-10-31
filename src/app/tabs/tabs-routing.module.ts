@@ -10,7 +10,11 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
-      }
+      },
+      // {
+      //   path: 'order',
+      //   loadChildren: () => import('../orders/order.module').then(m => m.OrderPageModule)
+      // },
     //   {
     //     path: 'history',
     //     loadChildren: () => import('../pages/history/history.module').then(m => m.HistoryPageModule)
@@ -27,11 +31,11 @@ const routes: Routes = [
     //     path: 'profile',
     //     loadChildren: () => import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
     //   },
-    //   {
-    //     path: '',
-    //     redirectTo: '/tabs/home',
-    //     pathMatch: 'full'
-    //   }
+      {
+        path: '',
+        redirectTo: '/tabs/home',
+        pathMatch: 'full'
+      }
     ]
   },
   {

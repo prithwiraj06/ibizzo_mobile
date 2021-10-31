@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpPageModule)
   },
   {
+    path: 'order-confirmation',
+    loadChildren: () => import('./order-confirmation/order-confirmation.module').then(m => m.OrderConfirmationPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'

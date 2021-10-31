@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div>
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+  </div>
+  <div class="ion-text-center">
+      <h3>Your order has been accepted</h3>
+      <ion-label color="medium">Your order has been placed and is an it's way to being processed</ion-label>
+  </div>
+
+  <ion-fab vertical="bottom" slot="fixed">
+      <ion-fab-button color="success" (click)="validateOtp()">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
