@@ -10,7 +10,7 @@ export class GetStartedPage {
 
   constructor(private _router: Router) { }
   
-  navigateToSignupPage() {
-    this._router.navigate(['/signu-up'])
+  navigateToSignUp() {
+    this._router.navigate(['/sign-up'])
   }
 }
