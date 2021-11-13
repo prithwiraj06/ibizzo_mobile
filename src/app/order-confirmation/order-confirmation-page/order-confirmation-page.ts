@@ -11,4 +11,8 @@ export class OrderConfirmationPage implements OnInit {
 
   ngOnInit() {}
 
+  navigateToTrackOrder() {
+    
+  }
+
 }
