@@ -1,0 +1,42 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="sign-up/otp"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-text-center">
+    <div>
+      <ion-label><strong>Select Your Location</strong></ion-label>
+    </div>
+
+    <div class="ion-margin-top">
+      <ion-label color="medium">Select your location to get groceries delivered at lowest price</ion-label>
+    </div>
+  </div>
+
+
+  <div class="ion-margin-top">
+    <form [formGroup]="addressForm">
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Your Area Pin Code</ion-label>
+        <ion-input formControlName="pinCode" autocomplete="off"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Type of Residence/Business</ion-label>
+        <ionic-selectable item-content formControlName="typeOfResidence" itemValueField="addressTypeId"
+          itemTextField="addressType" [items]="addressTypes" [canSearch]="false" (onChange)="addressTypeChange($event.value)">
+        </ionic-selectable>
+      </ion-item>
+      <div class="ion-margin-top">
+        <ion-button color="success" expand="block" (click)="onFormSubmit()">Submit</ion-button>
+      </div>
+
+    </form>
+
+
+  </div>
+</ion-content>

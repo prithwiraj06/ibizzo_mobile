@@ -38,15 +38,12 @@ export class OtpPage implements OnInit{
     this.otp = otp;
   }
 
-  navigateToDashboard() {
-    this._router.navigate(['/dashboard']);
-  }
-
   resendOtp() {
     
   }
   
   validateOtp() {
+    this._router.navigate(['/sign-up/address'])
   }
 
 }
